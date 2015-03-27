@@ -1,0 +1,10 @@
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - '.bundle/**/*'
+    - 'vendor/**/*'
+    - 'log/**/*'
+Metrics/LineLength:
+  Max: 100
