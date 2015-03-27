@@ -1,4 +1,4 @@
-script: rspec
+script: rake spec
 rvm:
   - jruby-1.7.19
 
