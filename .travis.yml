@@ -1,0 +1,6 @@
+script: rspec
+rvm:
+  - jruby-1.7.19
+
+matrix:
+  allow_failures:
