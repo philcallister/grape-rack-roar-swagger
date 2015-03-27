@@ -1,4 +1,6 @@
 # Todo API
+[![Build Status](https://travis-ci.org/philcallister/grape-rack-roar-swagger.svg?branch=master)](https://travis-ci.org/philcallister/grape-rack-roar-swagger)
+[![Code Climate](https://codeclimate.com/github/philcallister/grape-rack-roar-swagger/badges/gpa.svg)](https://codeclimate.com/github/philcallister/grape-rack-roar-swagger)
 
 This is an example application showing how to use
 [grape](https://github.com/intridea/grape) on Rack to create a simple API using
