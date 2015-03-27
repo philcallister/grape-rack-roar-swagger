@@ -1,56 +1,54 @@
 # Todo API
 
 This is an example application showing how to use
-[grape](https://github.com/intridea/grape) to create a simple API using
-entities with the [grape-entity](https://github.com/intridea/grape-entity) gem.
+[grape](https://github.com/intridea/grape) on Rack to create a simple API using
+[ROAR](https://github.com/apotonick/roar) along with [Grape Swagger](https://github.com/tim-vandecasteele/grape-swagger).
 This sample shows how to create a simple API without authentication, caching, etc.
-It also only shows GET requests.  It doesn't update or delete any information.  I
-plan to add a few examples, but this is really just to show how Grape + Grape-Entity
-work together.
 
 ## Environment
 
 The sample was developed using the following 
 
-1. Rails 4.1.4
-2. Ruby 2.1.0p0
-3. OS X 10.9.4
-4. Grape (0.8.0) 
-5. Grape Entity (0.4.3) 
+1. JRuby 1.17.19
+2. OS X 10.10.2
+3. Rack
+3. grape
+4. ROAR
+5. grape-swagger 
 
 ## Setup
 
 Gem installation
 
 ```bash
-bundle install
+bundle install --path .bundle/gems --binstubs .bundle/bin
 ```
 
 Create and migrate
 
 ```bash
-rake db:migrate
+bundle exec rake db:migrate
+bundle exec rake db:migrate RACK_ENV=test
 ```
 
 Seed data
 
 ```bash
-rake db:seed
+bundle exec rake db:seed
 ```
 
 ## Testing
 
 ```bash
-rake db:test:prepare # deprecated -- not sure why test db still needs to be prepared.  TBD...
-bundle exec rspec spec
+bundle exec rake spec
 ```
 
 ## Run It
 
-Start the Rails server
+Start the server
 
 ```bash
-rails s
+bundle exec puma
 ```
 
 ## Usage
@@ -58,37 +56,43 @@ rails s
 Getting all todos
 
 ```bash
-curl -i http://localhost:3000/api/v1/todos
+curl -i http://localhost:9292/v1/todos
 ```
 
 Getting all todos (include todo items)
 
 ```bash
-curl -i http://localhost:3000/api/v1/todos?type=all
+curl -i http://localhost:9292/v1/todos?type=all
 ```
 
 Getting a single todo
 
 ```bash
-curl -i http://localhost:3000/api/v1/todos/1
+curl -i http://localhost:9292/v1/todos/1
 ```
 
 Getting a single todo (include todo items)
 
 ```bash
-curl -i http://localhost:3000/api/v1/todos/1?type=all
+curl -i http://localhost:9292/v1/todos/1?type=all
 ```
 
 Getting the items for a todo
 
 ```bash
-curl -i http://localhost:3000/api/v1/todos/1/items
+curl -i http://localhost:9292/v1/todos/1/items
 ```
 
 Failure to get an item
 
 ```bash
-curl -i http://localhost:3000/api/v1/items/999
+curl -i http://localhost:9292/v1/items/999
+```
+
+Update a binary file
+
+```bash
+curl -X POST -i -F binary_file=@packers.png http://localhost:9292/v1/binary
 ```
 
 ## Swagger Support
@@ -101,11 +105,11 @@ git clone https://github.com/wordnik/swagger-ui.git
 Make sure the Rails server is running
 
 ```bash
-rails s
+bundle exec puma
 ```
 
 From Chrome or Safari, open the locally installed Swagger __swagger-ui/dist/index.html__ file.  In the text
 field that currently lists __http://petstore.swagger.wordnik.com/api/api-docs__, change this to
-__http://localhost:3000/api/swagger_doc__
+__http://localhost:9292/swagger_doc__
 
 From here, you'll be able to explore the API through the Swagger UI.
