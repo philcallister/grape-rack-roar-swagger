@@ -1,5 +1,6 @@
 before_script:
-  - psql -c 'create database vizadapt_test;'
+  - cp db/config.yml.travis db/config.yml
+  - psql -c 'create database travis_ci_test;' -U postgres
 script: bundle exec rake spec
 rvm:
   - jruby-1.7.19

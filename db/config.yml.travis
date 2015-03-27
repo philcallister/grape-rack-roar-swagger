@@ -1,0 +1,5 @@
+test:
+  adapter: postgresql
+  encoding: utf-8
+  database: travis_ci_test
+  username: postgres
