@@ -67,15 +67,14 @@ module API
           end
           post '/', http_codes: [
             [201, "Created"],
-            [400, "Bad Request"],
-            [404, "Not Found"]
+            [400, "Bad Request"]
           ] do
             todo = Todo.new
             todo.title = params[:title] if params[:title]
             todo.description = params[:description] if params[:description]
             todo.save 
             unless todo.nil?
-              status 200
+              status 201
               todo.extend(API::V1::Representers::TodoRepresenter)
               todo.to_hash
             end
@@ -86,8 +85,12 @@ module API
           params do
             requires :id, type: Integer, desc: "The todo's unique id"
           end
-          delete ':id' do
+          delete ':id', http_codes: [
+            [204, "No Content"],
+            [404, "Not Found"]
+          ] do
             Todo.destroy(params[:id])
+            nil
           end
 
         end
