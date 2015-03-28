@@ -98,7 +98,7 @@ curl -X POST -i -F binary_file=@packers.png http://localhost:9292/v1/binary
 ```
 
 ## Swagger Support
-First, install [Swagger](https://github.com/wordnik/swagger-ui) somewhere locally.
+First, install [Swagger UI](https://github.com/wordnik/swagger-ui) somewhere locally.
 
 ```bash
 git clone https://github.com/wordnik/swagger-ui.git
