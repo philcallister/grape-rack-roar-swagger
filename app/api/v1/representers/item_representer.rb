@@ -11,7 +11,7 @@ module API
         property :complete, type: 'String', desc: 'Is this item complete?'
 
         link :self do
-          # employee_url(self.id)
+          "/v1/items/#{self.id}"
         end
       end
     end

@@ -14,7 +14,7 @@ module API
           lambda { |options| options[:type] == 'all' } 
 
         link :self do
-          # employee_url(self.id)
+          "/v1/todos/#{self.id}"
         end
       end
     end
