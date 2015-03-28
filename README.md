@@ -4,7 +4,7 @@
 
 This is an example application showing how to use
 [grape](https://github.com/intridea/grape) on Rack to create a simple API using
-[ROAR](https://github.com/apotonick/roar) along with [Grape Swagger](https://github.com/tim-vandecasteele/grape-swagger).
+[ROAR](https://github.com/apotonick/roar) along with [grape-swagger](https://github.com/tim-vandecasteele/grape-swagger).
 This sample shows how to create a simple API without authentication, caching, etc.
 
 ## Environment
