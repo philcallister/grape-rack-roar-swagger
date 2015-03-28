@@ -16,7 +16,7 @@ describe API::Base do
                                            todo_id: todo.id,
                                            description: "Description 1",
                                            complete: true,
-                                           _links: {}}.to_json)
+                                           _links: { self: {href: "/v1/items/#{item.id}"}}}.to_json)
       end
     end
   end
