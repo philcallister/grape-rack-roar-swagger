@@ -91,7 +91,7 @@ Failure to get an item
 curl -i http://localhost:9292/v1/items/999
 ```
 
-Update a binary file
+Upload a binary file
 
 ```bash
 curl -X POST -i -F binary_file=@packers.png http://localhost:9292/v1/binary
