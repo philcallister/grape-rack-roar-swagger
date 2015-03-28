@@ -104,7 +104,7 @@ First, install [Swagger UI](https://github.com/wordnik/swagger-ui) somewhere loc
 git clone https://github.com/wordnik/swagger-ui.git
 ```
 
-Make sure the Rails server is running
+Make sure the app server is running
 
 ```bash
 bundle exec puma
