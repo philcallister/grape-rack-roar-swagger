@@ -1,5 +1,5 @@
 test:
-  adapter: postgresql
-  encoding: utf-8
+  adapter: sqlite3
+  pool: 5
+  timeout: 5000
   database: travis_ci_test
-  username: postgres
