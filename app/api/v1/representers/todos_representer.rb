@@ -1,3 +1,5 @@
+require 'todo_representer'
+
 module API
   module V1
     module Representers

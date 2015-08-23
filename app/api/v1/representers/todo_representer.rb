@@ -1,3 +1,5 @@
+require 'item_representer'
+
 module API
   module V1
     module Representers
