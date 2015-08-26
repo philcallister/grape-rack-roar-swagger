@@ -13,18 +13,18 @@
 
 ActiveRecord::Schema.define(version: 2) do
 
-  create_table "items", force: true do |t|
+  create_table "items", force: :cascade do |t|
     t.integer  "todo_id"
-    t.string   "description"
-    t.boolean  "complete",    default: false
+    t.string   "description", limit: 255
+    t.boolean  "complete",                default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "todos", force: true do |t|
-    t.string   "title"
-    t.string   "description"
-    t.boolean  "complete",    default: false
+  create_table "todos", force: :cascade do |t|
+    t.string   "title",       limit: 255
+    t.string   "description", limit: 255
+    t.boolean  "complete",                default: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

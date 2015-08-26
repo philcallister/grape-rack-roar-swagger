@@ -6,16 +6,13 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'roar'
 gem 'grape'
 gem 'grape-swagger'
-# gem 'newrelic_rpm'
-# gem 'newrelic-grape'
 
-gem 'activerecord', '~> 4.1.0', require: 'active_record'
+gem 'activerecord', '~> 4.2.0', require: 'active_record'
 gem 'activerecord-jdbcsqlite3-adapter'
 gem 'standalone_migrations'
 
 group :development do
   gem 'rake'
-  gem 'puma'
   gem 'guard'
   gem 'guard-bundler'
   gem 'guard-rack'
